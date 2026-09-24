@@ -3,143 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Between the Lines</title>
-<meta name="description" content="A quiet little archive of an unexpectedly meaningful connection.">
+<title>Project: Something Unexpected</title>
+<meta name="description" content="An unnecessarily well-engineered investigation into one unexpectedly interesting conversation.">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-:root{--bg:#fbfaf8;--ink:#242224;--muted:#777174;--accent:#9b5266;--accent-soft:#f3e5e9;--card:#fff;--line:#e9e2df;--dark:#282426}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(180deg,#fbfaf8 0%,#fff 45%,#faf7f5 100%);color:var(--ink);font-family:'DM Sans',sans-serif}
-.wrap{max-width:1000px;margin:auto;padding:0 24px}
-.hero{min-height:94vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#f2dfe4 0%,transparent 68%);top:-220px;left:-170px;opacity:.7}
-.hero:after{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,#eee5dc 0%,transparent 68%);right:-180px;bottom:-220px;opacity:.65}
-.hero-inner{position:relative;z-index:2}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700}
-.eyebrow:before,.eyebrow:after{content:"";width:28px;height:1px;background:#d5aeb8}
-h1{font:600 clamp(54px,10vw,96px)/.95 'Playfair Display',serif;letter-spacing:-3px;margin:25px 0 20px}
-.hero-copy{max-width:650px;margin:auto;color:var(--muted);font-size:17px;line-height:1.8}
-.cta{display:inline-block;margin-top:30px;padding:13px 20px;background:var(--dark);color:white;border-radius:10px;text-decoration:none;font-size:13px;font-weight:700;transition:.2s}
-.cta:hover{transform:translateY(-2px)}
-section{padding:95px 0}
-.section-head{text-align:center;max-width:680px;margin:0 auto 42px}
-.section-head h2{font:600 39px/1.1 'Playfair Display',serif;margin:0 0 12px}
-.section-head p{color:var(--muted);margin:0;line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:18px;padding:27px;box-shadow:0 16px 45px rgba(50,30,35,.05)}
-.card .num{font-size:11px;letter-spacing:1.8px;color:var(--accent);font-weight:700}
-.card h3{font:600 22px 'Playfair Display',serif;margin:12px 0 9px}
-.card p{color:var(--muted);font-size:14px;line-height:1.75;margin:0}
-.chat-wrap{max-width:700px;margin:auto;padding:34px;background:#f6f2ef;border:1px solid var(--line);border-radius:24px}
-.chat-label{font-size:10px;letter-spacing:1.7px;color:var(--muted);text-transform:uppercase;text-align:center;margin-bottom:24px}
-.chat{display:grid;gap:12px}
-.bubble{padding:14px 17px;border-radius:17px;max-width:76%;font-size:14px;line-height:1.6}
-.left{background:white;border:1px solid var(--line);justify-self:start;border-bottom-left-radius:5px}
-.right{background:var(--accent-soft);justify-self:end;border-bottom-right-radius:5px}
-.quote{max-width:720px;margin:42px auto 0;text-align:center;font:500 26px/1.55 'Playfair Display',serif;color:#40383b}
-.quote em{color:var(--accent);font-style:normal}
-.statement{background:var(--dark);color:white;border-radius:26px;padding:58px 45px;text-align:center}
-.statement .eyebrow{color:#e7bdc7}
-.statement .eyebrow:before,.statement .eyebrow:after{background:#8f6b73}
-.statement h2{font:600 39px 'Playfair Display',serif;margin:18px 0 14px}
-.statement p{max-width:620px;margin:auto;color:#cfc8ca;line-height:1.8}
-.museum{margin-top:26px;padding:30px;background:#f2eee9;border:1px solid var(--line);border-radius:18px;text-align:center}
-.museum h3{font:600 25px 'Playfair Display',serif;margin:0 0 8px}
-.museum p{color:var(--muted);font-size:14px;line-height:1.7}
-button{border:0;background:var(--dark);color:white;padding:11px 16px;border-radius:9px;font-weight:700;cursor:pointer}
-footer{text-align:center;color:#91898b;font-size:11px;letter-spacing:.3px;padding:30px 24px 55px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.bubble{max-width:90%}section{padding:70px 0}.statement{padding:42px 25px}.statement h2{font-size:32px}}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+:root{--bg:#f7f8fa;--paper:#fff;--ink:#111827;--muted:#667085;--line:#dfe3e8;--blue:#2563eb;--blue-soft:#eff6ff;--pink:#be526c;--pink-soft:#fff1f4;--green:#15803d;--terminal:#111827}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif}
+.wrap{width:min(1080px,calc(100% - 40px));margin:auto}.mono{font-family:'DM Mono',monospace}
+.nav{height:64px;border-bottom:1px solid var(--line);background:#ffffffd9;backdrop-filter:blur(12px);display:flex;align-items:center;position:sticky;top:0;z-index:20}.navin{display:flex;justify-content:space-between;align-items:center}.brand{font:500 13px 'DM Mono',monospace;color:#344054}.status{font:500 11px 'DM Mono',monospace;color:var(--green);display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 4px #dcfce7}
+.hero{padding:110px 0 95px;background:radial-gradient(circle at 85% 15%,#dbeafe 0,transparent 28%),radial-gradient(circle at 10% 85%,#fce7f3 0,transparent 25%),var(--bg);border-bottom:1px solid var(--line)}
+.kicker{font:500 12px 'DM Mono',monospace;color:var(--blue);margin-bottom:22px}.kicker span{color:#98a2b3}
+h1{font:700 clamp(48px,8vw,88px)/.98 'Inter',sans-serif;letter-spacing:-5px;max-width:900px;margin:0 0 25px}.accent{color:var(--pink)}.hero p{max-width:720px;color:var(--muted);font-size:17px;line-height:1.8;margin:0}.hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{display:inline-block;padding:12px 17px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:700;border:1px solid var(--line);background:white;color:var(--ink)}.btn.primary{background:var(--ink);color:white;border-color:var(--ink)}
+section{padding:90px 0}.section-label{font:500 11px 'DM Mono',monospace;color:var(--blue);letter-spacing:.8px;text-transform:uppercase}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:32px}.section-head h2{font-size:34px;letter-spacing:-1.5px;margin:8px 0 0}.section-head p{max-width:500px;color:var(--muted);line-height:1.7;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:25px;box-shadow:0 8px 25px rgba(16,24,40,.035)}.card .id{font:500 11px 'DM Mono',monospace;color:#98a2b3}.card h3{font-size:19px;margin:15px 0 9px;letter-spacing:-.4px}.card p{font-size:14px;color:var(--muted);line-height:1.75;margin:0}
+.terminal{background:var(--terminal);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(17,24,39,.16)}.termbar{height:38px;background:#1f2937;display:flex;align-items:center;padding:0 14px;gap:7px}.termbar i{width:9px;height:9px;border-radius:50%;background:#667085}.termtitle{margin-left:8px;color:#98a2b3;font:400 10px 'DM Mono',monospace}.term{padding:28px;color:#e5e7eb;font:400 13px/2 'DM Mono',monospace}.prompt{color:#60a5fa}.cmd{color:#f9fafb}.comment{color:#6b7280}.result{color:#a7f3d0}.pink{color:#f9a8d4}
+.chat{max-width:760px;margin:auto;background:white;border:1px solid var(--line);border-radius:14px;padding:25px}.chathead{display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line);font:500 10px 'DM Mono',monospace;color:#98a2b3}.messages{display:grid;gap:12px;padding-top:20px}.bubble{max-width:76%;padding:13px 16px;border-radius:13px;font-size:14px;line-height:1.6}.left{justify-self:start;background:#f2f4f7}.right{justify-self:end;background:var(--blue-soft);color:#1d4ed8}.quote{margin:42px auto 0;max-width:760px;text-align:center;font:600 27px/1.5 'Playfair Display',serif}.quote span{color:var(--pink)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:white;border-radius:12px;overflow:hidden}.metric{padding:24px;border-right:1px solid var(--line)}.metric:last-child{border-right:0}.metric strong{display:block;font-size:25px;letter-spacing:-1px}.metric span{font:400 10px 'DM Mono',monospace;color:#98a2b3;text-transform:uppercase}
+.final{background:var(--ink);color:white;border-radius:16px;padding:60px}.final .section-label{color:#93c5fd}.final h2{font-size:43px;letter-spacing:-2px;max-width:760px;margin:13px 0}.final p{max-width:700px;color:#b8c0cc;line-height:1.8}.final .tiny{font:400 11px 'DM Mono',monospace;color:#667085;margin-top:28px}
+.fun{margin-top:20px;border:1px solid #d0d5dd;background:white;padding:11px 15px;border-radius:8px;font-weight:700;cursor:pointer}
+footer{padding:35px 0 55px;text-align:center;color:#98a2b3;font:400 10px 'DM Mono',monospace}
+@media(max-width:760px){.wrap{width:min(100% - 28px,1080px)}.hero{padding:80px 0}.grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.metric:nth-child(2){border-right:0}.metric{border-bottom:1px solid var(--line)}.section-head{display:block}.section-head p{margin-top:12px}h1{letter-spacing:-3px}.final{padding:38px 25px}.final h2{font-size:34px}.bubble{max-width:90%}}
 </style>
 </head>
 <body>
+<nav class="nav"><div class="wrap navin"><div class="brand">/project/unnecessarily-serious</div><div class="status"><i class="dot"></i> SYSTEM OPERATIONAL</div></div></nav>
+
 <header class="hero">
-<div class="wrap hero-inner">
-<div class="eyebrow">A small story about two people</div>
-<h1>Between the Lines</h1>
-<p class="hero-copy">Some connections arrive quietly. No grand introduction, no dramatic soundtrack, just conversations that keep finding reasons to continue.</p>
-<a class="cta" href="#story">Read the story ↓</a>
+<div class="wrap">
+<div class="kicker">CASE FILE 001 <span>// confidential-ish</span></div>
+<h1>An unnecessarily serious study of an <span class="accent">unnecessarily interesting</span> connection.</h1>
+<p>This project began with a few ordinary conversations and quickly became a problem that could not be solved with logic alone. So naturally, it required a website.</p>
+<div class="hero-actions"><a class="btn primary" href="#analysis">Run analysis ↓</a><a class="btn" href="#archive">Inspect evidence</a></div>
 </div>
 </header>
 
-<main id="story">
+<main id="analysis">
 <section>
 <div class="wrap">
-<div class="section-head">
-<h2>What makes this different</h2>
-<p>Not everything meaningful announces itself. Sometimes it hides inside ordinary conversations.</p>
-</div>
-<div class="grid">
-<article class="card"><div class="num">01 · THE BEGINNING</div><h3>Unexpected familiarity</h3><p>Two people can start with almost nothing in common except a conversation, then slowly discover that talking never feels quite as ordinary as it should.</p></article>
-<article class="card"><div class="num">02 · THE RHYTHM</div><h3>Easy conversation</h3><p>There are serious moments, ridiculous moments, unexplained pauses and the occasional “thk hai”. Somehow, all of it belongs.</p></article>
-<article class="card"><div class="num">03 · THE UNEXPLAINED</div><h3>Something worth noticing</h3><p>It is difficult to define a connection while you are living inside it. Sometimes you simply notice that you look forward to the next conversation.</p></article>
-</div>
+<div class="section-head"><div><div class="section-label">01 / Problem statement</div><h2>The hypothesis</h2></div><p>Can two people have a completely normal conversation that is, statistically speaking, far less normal than it appears?</p></div>
+<div class="terminal">
+<div class="termbar"><i></i><i></i><i></i><span class="termtitle">research_terminal — bash</span></div>
+<div class="term">
+<div><span class="prompt">$</span> <span class="cmd">initialize_connection --mode=casual</span></div>
+<div class="comment"># expected output: ordinary conversation</div>
+<div><span class="prompt">$</span> <span class="cmd">run --iterations=∞</span></div>
+<div><span class="result">✓ conversation continued</span></div>
+<div><span class="result">✓ random topics detected</span></div>
+<div><span class="result">✓ “thk hai” detected repeatedly</span></div>
+<div><span class="result">✓ unnecessary overthinking detected</span></div>
+<div><span class="prompt">$</span> <span class="cmd">print(conclusion)</span></div>
+<div class="pink">Something is definitely going on here.</div>
+</div></div>
 </div>
 </section>
 
 <section>
 <div class="wrap">
-<div class="section-head">
-<h2>The conversation archive</h2>
-<p>A lightly edited record of the atmosphere, not a transcript.</p>
+<div class="section-head"><div><div class="section-label">02 / Observations</div><h2>Unexpected findings</h2></div><p>After extensive field research, absolutely no funding, and an unreasonable amount of thought.</p></div>
+<div class="grid">
+<article class="card"><div class="id">OBS_001</div><h3>The “thk hai” phenomenon</h3><p>Two words. Multiple meanings. Tone-dependent interpretation. A surprisingly high impact-to-character ratio.</p></article>
+<article class="card"><div class="id">OBS_002</div><h3>Conversation latency</h3><p>Waiting for a reply appears to distort the perception of time. Further research is required. Obviously.</p></article>
+<article class="card"><div class="id">OBS_003</div><h3>Unexpected depth</h3><p>Some perfectly ordinary sentences suddenly become philosophical when you read them twice at 2 a.m.</p></article>
 </div>
-<div class="chat-wrap">
-<div class="chat-label">Private collection · Exhibit 01</div>
+</div>
+</section>
+
+<section id="archive">
+<div class="wrap">
+<div class="section-head"><div><div class="section-label">03 / Primary evidence</div><h2>The conversation log</h2></div><p>Selected samples from the dataset. Context has been preserved. Dignity has not.</p></div>
 <div class="chat">
+<div class="chathead"><span>MESSAGE_ARCHIVE</span><span>STATUS: CLASSIFIED</span></div>
+<div class="messages">
 <div class="bubble left">Thk hai</div>
-<div class="bubble right">Two words. Somehow several possible meanings.</div>
+<div class="bubble right">A remarkably compact message with suspiciously high interpretive complexity.</div>
 <div class="bubble left">Jsai ap bat krtai hai lgta nhi</div>
-<div class="bubble right">And yet, somehow, the conversation continued.</div>
+<div class="bubble right">And yet the system continued operating normally.</div>
 <div class="bubble left">Zindagi guzaar raha hu</div>
-<div class="bubble right">A perfectly casual sentence with absolutely no philosophical consequences.</div>
+<div class="bubble right">Input classified as: casual sentence / existential undertones.</div>
 </div>
 </div>
-<div class="quote">“I may someday find you away from the crowd, in the silence of something.” <em>♥</em></div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="section-head">
-<h2>A few observations</h2>
-<p>Collected without pretending to have everything figured out.</p>
-</div>
-<div class="grid">
-<article class="card"><div class="num">OBSERVATION 01</div><h3>Conversation is not a transaction</h3><p>The best conversations do not always have a destination. Sometimes the conversation itself becomes the destination.</p></article>
-<article class="card"><div class="num">OBSERVATION 02</div><h3>Small things become memorable</h3><p>A phrase, a pause, a joke or an ordinary reply can become strangely memorable when it comes from the right person.</p></article>
-<article class="card"><div class="num">OBSERVATION 03</div><h3>There is no neat conclusion</h3><p>Perhaps that is the point. Some stories are better left slightly unfinished, with another conversation waiting somewhere ahead.</p></article>
-</div>
+<div class="quote">“I may someday find you away from the crowd, in the silence of something.” <span>♥</span></div>
 </div>
 </section>
 
 <section>
 <div class="wrap">
-<div class="statement">
-<div class="eyebrow">The simplest description</div>
-<h2>Two people. One growing sense of familiarity.</h2>
-<p>Not a perfect story. Not a carefully planned one. Just two lives crossing paths, sharing thoughts, finding humour in small things, and gradually making an ordinary connection feel a little less ordinary.</p>
+<div class="section-head"><div><div class="section-label">04 / Project metrics</div><h2>Results so far</h2></div><p>The methodology is questionable. The observations are not.</p></div>
+<div class="metrics">
+<div class="metric"><strong>∞</strong><span>Topics discovered</span></div>
+<div class="metric"><strong>01</strong><span>Connection under study</span></div>
+<div class="metric"><strong>0%</strong><span>Efficiency maintained</span></div>
+<div class="metric"><strong>100%</strong><span>Worth investigating</span></div>
 </div>
+</div>
+</section>
 
-<div class="museum">
-<h3>The “Kuch Nahi” Archive</h3>
-<p>For research purposes, this highly sophisticated institution has preserved several important findings.</p>
-<button onclick="reveal()">Open exhibit</button>
-<p id="exhibit" style="font-weight:600;color:#4b4245;margin-bottom:0"></p>
+<section>
+<div class="wrap">
+<div class="final">
+<div class="section-label">05 / Final report</div>
+<h2>The data does not support a completely ordinary explanation.</h2>
+<p>There is no grand scientific conclusion. Just a pattern: conversations keep happening, small things keep becoming memorable, and somehow the person on the other side of the screen becomes a little harder to describe as “just someone”.</p>
+<div class="tiny">STATUS: conclusion pending · recommendation: continue observation</div>
+</div>
+<div style="text-align:center;padding-top:30px">
+<button class="fun" onclick="reveal()">Run one final experiment</button>
+<p id="result" class="mono" style="font-size:12px;color:#667085;min-height:18px"></p>
 </div>
 </div>
 </section>
 </main>
 
-<footer>Built from conversations, small details, questionable humour, and a little too much thought.</footer>
+<footer>Designed with unnecessary precision, questionable methodology, and considerably more thought than the project specification required.</footer>
 
 <script>
-const exhibits=[
-'Exhibit #1: “Kuch nahi” has historically meant considerably more than kuch nahi.',
-'Exhibit #2: The phrase “thk hai” remains scientifically impossible to interpret without context.',
-'Exhibit #3: No clear conclusion was reached. The conversation continues.',
-'Exhibit #4: Somewhere between the jokes and ordinary messages, something genuine appeared.',
-'Exhibit #5: Further research requires another conversation.'
+const results=[
+'Experiment result: “Kuch nahi” is statistically unlikely to mean kuch nahi.',
+'Experiment result: another conversation is required for a larger sample size.',
+'Experiment result: hypothesis remains annoyingly unresolved.',
+'Experiment result: correlation detected between random conversations and smiling at the screen.',
+'Experiment result: peer review postponed indefinitely.'
 ];
-function reveal(){document.getElementById('exhibit').textContent=exhibits[Math.floor(Math.random()*exhibits.length)]}
+function reveal(){document.getElementById('result').textContent=results[Math.floor(Math.random()*results.length)]}
 </script>
 </body>
 </html>
